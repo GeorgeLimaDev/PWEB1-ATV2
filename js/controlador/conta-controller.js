@@ -20,25 +20,25 @@ class ContaController {
     inserir(evento) {
         evento.preventDefault();
         if(this.tipoConta.value == 'Conta Regular') {
-            const conta = new conta(this.elementoNumero.value,
+            const conta = new Conta(this.elementoNumero.value,
                 Number(this.elementoSaldo.value));
             this.repositorioContas.adicionar(conta);
             this.inserirContaNoHTML(conta);
-            console.log('tipo 1');
+            console.log('criou tipo 1');
         }
         else if(this.tipoConta.value == 'Conta Bonificada') {
             const conta = new ContaBonificada(this.elementoNumero.value,
                 Number(this.elementoSaldo.value));
             this.repositorioContas.adicionar(conta);
             this.inserirContaNoHTML(conta);
-            console.log('tipo 2');
+            console.log('criou tipo 2');
         }
         else if (this.tipoConta.value == 'Conta Poupança') {
             const conta = new poupanca(this.elementoNumero.value,
                 Number(this.elementoSaldo.value), this.aniversario.value);
             this.repositorioContas.adicionar(conta);
             this.inserirContaNoHTML(conta);
-                console.log('tipo 3');
+                console.log('criou tipo 3');
 
         }
         else {

@@ -1,7 +1,7 @@
-class poupanca extends conta {
+class poupanca extends Conta {
     constructor(numero, saldo, aniversario) {
         super(numero, saldo);
-        this.aniversario = aniversario;
+        this._aniversario = aniversario;
     }
 
     creditar(valor) {
@@ -11,5 +11,13 @@ class poupanca extends conta {
     bonificar() {
         //Lógica que testa se o dia de hoje é igual ao dia do nascimento
         this.saldo *= 1.2;
+    }
+
+    get aniversario() {
+        return this._aniversario;
+    }
+
+    set aniversario(novaData) {
+        this._aniversario = novaData;
     }
 }
